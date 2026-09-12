@@ -1,0 +1,125 @@
+body{
+  background-color:rgb(18, 19, 22);;
+  height: 100vh;
+  font-family: "Orbitron", sans-serif;
+}
+nav{
+  height:200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(34, 34, 34);
+}
+main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clock{
+  position: relative;
+  height: 300px;
+  width: 300px;
+  background-color: rgb(245, 241, 232);
+  border-radius: 50%;
+  border: 2px solid rgb(148, 148, 148);
+}
+.clock::before{
+   content: "";
+  height: 320px;
+  width: 320px;
+  border-radius: 50%;
+  background-image: linear-gradient(267deg, rgb(228, 228, 231) 0%, rgb(161, 161, 170) 50%, rgb(244, 244, 245) 100%);
+  position: absolute; 
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+   z-index: -1; 
+}
+.center {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    180deg,
+    rgb(228, 228, 231),
+    rgb(104, 104, 107),
+    rgb(88, 88, 88)
+  );
+  z-index: 10;
+}
+
+.center::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+}
+.strips {
+  width: 4px;
+  height: 13px;
+  background: black;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  left: 50%;
+  transform-origin: 50% 150px;
+  border-radius: 8px;
+}
+
+.hour{
+  width: 6px;
+  height: 80px;
+  background-color:black ;
+}
+.minute{
+  width: 4px;
+  height: 110px;
+  background-color: black;
+}
+.second{
+  width: 2px;
+  height: 110px;
+  z-index: 5;
+  background: red;
+  margin-top: -50px;
+}
+.second::before{
+  content: " ";
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.hand{
+ position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  border-radius: 10px;
+}
+.date{
+  position: absolute;
+  width: 20px;
+  border-radius: 2px;
+  background-color: rgb(249, 249, 249);
+  border:0.1mm solid rgba(29, 29, 29, 0.677);
+  height: 20px;
+  top: 48%;
+  left: 85%;
+  transform: translateX(-50%);
+}
