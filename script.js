@@ -4,6 +4,9 @@ for (let i = 0; i < 12; i++) {
   let text = document.createElement("h4");
   strip.classList.add("strips");
   strip.style.transform = `translateX(${i * -0.5}px) rotate(${i * 30}deg)`;
+  if (i === 6) {
+   text.style.transform = `translateY(${20}px)`;
+  }
   text.innerText = i || 12;
   text.style.fontFamily = "Orbitron, sans-serif";
   text.style.transform = `rotate(${-i * 30}deg)`;

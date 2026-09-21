@@ -1,14 +1,54 @@
+:root {
+    --background: #151618;
+    --clock-face: #F5F2E9;
+    --frame:linear-gradient(267deg, rgb(228, 228, 231) 0%, rgb(161, 161, 170) 50%, rgb(244, 244, 245) 100%);
+    --face-highlight: #F7F4ED;
+    --face-shadow: #EDE9E1;
+
+   --numbers: #37383B;
+    --ticks: #3F4042;
+    --minor-ticks: #C5C2B9;
+
+    --hands: #202124;
+    --second-hand: #CA473E;
+
+    --accent-blue: #173B5A;
+    --accent-brown: #8C654D;
+    --center-gold: #D8B84C;
+}
 body{
-  background-color:rgb(18, 19, 22);;
+  background-color:#151618;
   height: 100vh;
-  font-family: "Orbitron", sans-serif;
+ 
+}
+.header{
+   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-bottom: 20px;
 }
 nav{
-  height:200px;
+  
   display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color:#17171A;
+  border:0.1mm solid #252529;
+  border-radius: 20px;
+  height: 59px;
+  width:440px;
+}
+nav div{
+  font-size:1rem;
+  color:#F2F2F3;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgb(34, 34, 34);
+}
+nav div span{
+ font-size:0.7rem;
+ color:#AAB0C0;
 }
 main{
   display: flex;
@@ -22,13 +62,14 @@ main{
   background-color: rgb(245, 241, 232);
   border-radius: 50%;
   border: 2px solid rgb(148, 148, 148);
+  
 }
 .clock::before{
    content: "";
   height: 320px;
   width: 320px;
   border-radius: 50%;
-  background-image: linear-gradient(267deg, rgb(228, 228, 231) 0%, rgb(161, 161, 170) 50%, rgb(244, 244, 245) 100%);
+  background-image:var(--frame) ;
   position: absolute; 
   top: 50%;
   left: 50%;
@@ -75,8 +116,14 @@ main{
   left: 50%;
   transform-origin: 50% 150px;
   border-radius: 8px;
-}
 
+}
+.strips h4{
+ 
+   font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    color: #37383B;
+}
 .hour{
   width: 6px;
   height: 80px;
@@ -114,11 +161,11 @@ main{
 }
 .date{
   position: absolute;
-  width: 20px;
+  padding: 5px;
   border-radius: 2px;
   background-color: rgb(249, 249, 249);
   border:0.1mm solid rgba(29, 29, 29, 0.677);
-  height: 20px;
+  
   top: 48%;
   left: 85%;
   transform: translateX(-50%);
