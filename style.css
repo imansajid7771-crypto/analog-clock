@@ -1,21 +1,4 @@
-:root {
-    --background: #151618;
-    --clock-face: #F5F2E9;
-    --frame:linear-gradient(267deg, rgb(228, 228, 231) 0%, rgb(161, 161, 170) 50%, rgb(244, 244, 245) 100%);
-    --face-highlight: #F7F4ED;
-    --face-shadow: #EDE9E1;
 
-   --numbers: #37383B;
-    --ticks: #3F4042;
-    --minor-ticks: #C5C2B9;
-
-    --hands: #202124;
-    --second-hand: #CA473E;
-
-    --accent-blue: #173B5A;
-    --accent-brown: #8C654D;
-    --center-gold: #D8B84C;
-}
 body{
   background-color:#151618;
   height: 100vh;
@@ -45,6 +28,7 @@ nav div{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 nav div span{
  font-size:0.7rem;
@@ -54,12 +38,14 @@ main{
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  gap:68px;
 }
 .clock{
   position: relative;
   height: 300px;
   width: 300px;
-  background-color: rgb(245, 241, 232);
+  background-color: #F5F2E9;
   border-radius: 50%;
   border: 2px solid rgb(148, 148, 148);
   
@@ -69,7 +55,7 @@ main{
   height: 320px;
   width: 320px;
   border-radius: 50%;
-  background-image:var(--frame) ;
+  background-image:linear-gradient(#CFCED0,#B3B3BA,#DFDDD8) ;
   position: absolute; 
   top: 50%;
   left: 50%;
@@ -108,7 +94,7 @@ main{
 .strips {
   width: 4px;
   height: 13px;
-  background: black;
+  background: #3F4042;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -127,25 +113,25 @@ main{
 .hour{
   width: 6px;
   height: 80px;
-  background-color:black ;
+  background-color:#202124;
 }
 .minute{
   width: 4px;
   height: 110px;
-  background-color: black;
+  background-color: #202124;
 }
 .second{
   width: 2px;
   height: 110px;
   z-index: 5;
-  background: red;
+  background: #CA473E;
   margin-top: -50px;
 }
 .second::before{
   content: " ";
   width: 10px;
   height: 10px;
-  background-color: red;
+  background-color: #B93631;
   border-radius: 50%;
   position: absolute;
   top: 100%;
@@ -169,4 +155,10 @@ main{
   top: 48%;
   left: 85%;
   transform: translateX(-50%);
+}
+.digital-time{
+  background-color: #252529;
+  border: 0.1mm solid grey;
+  border-radius: 10px;
+  c
 }

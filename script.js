@@ -20,16 +20,31 @@ let second = document.querySelector(".second");
 function updateClock() {
   let now = new Date();
   let hours = now.getHours();
+  hours = hours % 12 || 12;
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
-  // Update the clock hands
+  let digital_time = document.querySelector(".digtime");
+  digital_time.innerText = `${hours}:${minutes}:${seconds}`;
+// Update the clock hands
   hour.style.transform = `rotate(${(hours % 12) * 30 + minutes * 0.5}deg)`;
   minute.style.transform = `rotate(${minutes * 6 + seconds * 0.1}deg)`;
   second.style.transform = `rotate(${seconds * 6}deg)`;
 }
-
 setInterval(updateClock, 1000);
 let date = document.querySelector(".date");
-let dat = new Date();
-let day = dat.getDate();
+let date1 = new Date();
+let day = date1.getDate();
 date.innerText = day;
+
+let day2 = document.querySelector(".day");
+let day1 = new Date();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
+];
+day2.innerText = days[day1.getDay()];
