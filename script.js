@@ -24,7 +24,7 @@ function updateClock() {
   let minutes = now.getMinutes();
   let seconds = now.getSeconds();
   let digital_time = document.querySelector(".digtime");
-  digital_time.innerText = `${hours}:${minutes}:${seconds}`;
+  digital_time.innerText = `${String(hours).padStart(2,"0")}:${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
 // Update the clock hands
   hour.style.transform = `rotate(${(hours % 12) * 30 + minutes * 0.5}deg)`;
   minute.style.transform = `rotate(${minutes * 6 + seconds * 0.1}deg)`;
@@ -39,12 +39,43 @@ date.innerText = day;
 let day2 = document.querySelector(".day");
 let day1 = new Date();
 let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
+  "Sun",
+  "Mon",
+  "Tues",
+  "Wed",
+  "Thur",
+  "Fri",
+  "Sat"
 ];
-day2.innerText = days[day1.getDay()];
+const months = [
+ "Jan",
+ "Feb",
+ "March",
+ "April",
+ "May",
+ "June",
+ "July",
+ "Aug",
+ "Sep",
+ "Oct",
+  "Nov",
+  "Dec"
+];
+let currmounth = months[day1.getMonth()];
+day2.innerText = `${days[day1.getDay()]},${currmounth}${day} `;
+
+// weather api
+let tem = document.querySelector(".temperature");
+let hum = document.querySelector(".humidity");
+const url =
+  "https://api.open-meteo.com/v1/forecast?latitude=31.4187&longitude=73.0791&current=temperature_2m,relative_humidity_2m,weather_code";
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    console.log(data);
+    let temp = data.current.temperature_2m;
+    tem.innerText = `temperature:🌤️${temp}°C`;
+    let humi = data.current.relative_humidity_2m;
+    hum.innerText = `humidity: 💧 ${humi}%`;
+    console.log("Weather code:", data.current.weather_code);
+  })
