@@ -157,32 +157,44 @@ main{
   transform: translateX(-50%);
 }
 .digital-time{
-  background-color: #252529;
-  border: 0.1mm solid #3F4042;
-  border-radius: 10px;
-  color: white;
-  display: flex;
-  gap:20px;
-  padding: 20px;
-  font-family: "JetBrains Mono", monospace;
- font-weight: 600;
- font-size: large;
- margin-top: 68px;
+       width:360px;
+    padding:18px 20px;
+    border-radius:20px;
+    background:rgba(28,30,36,.85);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    color:#fff;
+    font-family:"Manrope",sans-serif;
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+    font-family: "JetBrains Mono", monospace;
+    display: flex;
+    justify-content: space-between;
 }
-.ball{
-  height: 10px;
-  width: 10px;
-  background-color: green;
-  border-radius: 10px;
- margin-top: 5px;
-}
+
 .weather{
- background-color: #252529;
- border: 0.1mm solid #3F4042;
- border-radius: 10px;
- color: white;
- font-size: large;
- font-weight: 400;
- padding: 15px;
- margin-left: -30px;
+    width:360px;
+    padding:18px 20px;
+    border-radius:22px;
+    background:rgba(28,30,36,.85);
+    backdrop-filter:blur(20px);
+    border:1px solid rgba(255,255,255,.08);
+    color:#fff;
+    font-family:"Manrope",sans-serif;
+    box-shadow:0 10px 35px rgba(0,0,0,.35);
+  }
+.weather h6{
+  font-size: 1.8rem;
+  font-weight: 100;
+  line-height: 1;
+  margin: 0;
+  color:rgba(173, 173, 173, 0.986);
+}
+.weathertype{
+  font-size:20px;
+    font-weight:700;
+}
+.temperature{
+   font-size:52px;
+    margin:16px 0;
+    line-height:1;
 }
