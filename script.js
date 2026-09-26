@@ -77,18 +77,18 @@ fetch(url)
     let temp = data.current.temperature_2m;
     let code = data.current.weather_code;
     document.querySelector(".weathertype").innerText =getWeather(code);
-    tem.innerText = `${temp}°C`;
+    tem.innerText = `${temp}°`;
     let humi = data.current.relative_humidity_2m;
-    hum.innerText = `humidity: 💧 ${humi}%`;
+    hum.innerText = `${humi}%`;
     
   })
   function getWeather(code) {
 
     if (code === 0) {
-        return "☀️ Clear sky";
+        return "Clear sky";
     }
     else if (code >= 1 && code <= 3) {
-        return "🌤️ Partly cloudy";
+        return "🌤️Partly cloudy";
     }
     else if (code >= 45 && code <= 48) {
         return "🌫️ Foggy";
@@ -103,10 +103,10 @@ fetch(url)
         return "❄️ Snow";
     }
     else if (code >= 80 && code <= 82) {
-        return "🌧️ Rain showers";
+        return "🌧️Rain showers";
     }
     else if (code >= 95 && code <= 99) {
-        return "⛈️ Thunderstorm";
+        return "⛈️Thunderstorm";
     }
     else {
         return "🌍 Unknown";
